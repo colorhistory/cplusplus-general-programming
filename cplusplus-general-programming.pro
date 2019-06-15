@@ -5,4 +5,10 @@ TEMPLATE = subdirs
 QMAKE_CXXFLAGS += -std=c++17
 
 SUBDIRS += \
-    traits
+    traits \
+    sqrtconstexpr \
+    sqrt \
+    RemoveAllExtents \
+    HybridMetaprogramming \
+    # UnitsTypesMetaprogramming
+    DefineTemplate

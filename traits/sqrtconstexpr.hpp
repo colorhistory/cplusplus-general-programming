@@ -1,0 +1,6 @@
+﻿#ifndef SQRTCONSTEXPR_HPP
+#define SQRTCONSTEXPR_HPP
+
+
+
+#endif // SQRTCONSTEXPR_HPP
