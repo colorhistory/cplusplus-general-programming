@@ -29,4 +29,14 @@ SUBDIRS += \
     DefaultClassTemplateArguments \
     NontypeClassTemplate \
     AddValue \
-    AutoParameter
+    AutoParameter \
+    Message \
+    VariadicTemplate \
+    VariadicTemplate2 \
+    FoldExpression \
+    # AddSpace
+    VariadicBaseClass \
+    PrintColl \
+    LessArray \
+    Arrays \
+    MemberTemplates
