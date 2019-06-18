@@ -10,7 +10,7 @@
 
 #include "bits/stdc++.h"
 
-#include "max.hpp"
+#include "MaxCommon.hpp"
 
 int main(int /* argc */, char** /* argv */) {
     int i = 42;

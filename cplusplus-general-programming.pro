@@ -11,4 +11,22 @@ SUBDIRS += \
     RemoveAllExtents \
     HybridMetaprogramming \
     # UnitsTypesMetaprogramming
-    DefineTemplate
+    DefineTemplate \
+    MaxAuto \
+    MaxDecltype \
+    MaxDecltypeWithDecay \
+    MaxCommmon \
+    DefaultTemplateArguments \
+    DefaultTemplateArguments2 \
+    MaxOverloading \
+    MaxDefault \
+    MaxOverloading2 \
+    Stack \
+    FriendOfTemplate \
+    FriendOfTemplate2 \
+    Specialization \
+    PartialSpecialization \
+    DefaultClassTemplateArguments \
+    NontypeClassTemplate \
+    AddValue \
+    AutoParameter

@@ -10,19 +10,20 @@
 
 #include "bits/stdc++.h"
 
-#include "max.hpp"
+#include "NontypeClassTemplate.hpp"
 
 int main(int /* argc */, char** /* argv */) {
-    int i = 42;
-    std::cout << "max(7, i) " << GP::max(7, i) << std::endl;
+    GP::Stack<int, 20> int20Stack;
+    GP::Stack<int, 40> int40Stack;
+    GP::Stack<std::string, 40> stringStack;
 
-    double f1 = 3.4;
-    double f2 = -6.7;
-    std::cout << "max(f1, f2): " << GP::max(f1, f2) << std::endl;
+    int20Stack.push(7);
+    std::cout << int20Stack.top() << std::endl;
+    int20Stack.pop();
 
-    std::string s1 = "xiaohai";
-    std::string s2 = "xiaohaijin";
-    std::cout << "max(s1, s2): " << GP::max(s1, s2) << std::endl;
+    stringStack.push("xiaohai");
+    std::cout << stringStack.top() << std::endl;
+    stringStack.pop();
 
     return 0;
 }

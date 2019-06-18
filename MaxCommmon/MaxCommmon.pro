@@ -8,4 +8,4 @@ QMAKE_CXXFLAGS += -std=c++17
 SOURCES += main.cpp
 
 HEADERS += \
-    max.hpp
+    MaxCommon.hpp

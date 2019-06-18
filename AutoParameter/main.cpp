@@ -10,19 +10,21 @@
 
 #include "bits/stdc++.h"
 
-#include "max.hpp"
+#include "AutoParameter.hpp"
 
 int main(int /* argc */, char** /* argv */) {
-    int i = 42;
-    std::cout << "max(7, i) " << GP::max(7, i) << std::endl;
+    std::default_random_engine engine;
+    std::uniform_int_distribution<int> dis(0, 100);
 
-    double f1 = 3.4;
-    double f2 = -6.7;
-    std::cout << "max(f1, f2): " << GP::max(f1, f2) << std::endl;
+    GP::Stack<int, 10> intStack;
+    for (int i = 0; i != 10; ++i) {
+        intStack.push(dis(engine));
+    }
 
-    std::string s1 = "xiaohai";
-    std::string s2 = "xiaohaijin";
-    std::cout << "max(s1, s2): " << GP::max(s1, s2) << std::endl;
+    for (int i = 0; i != 10; ++i) {
+        std::cout << intStack.top() << "   ";
+        intStack.pop();
+    }
 
     return 0;
 }

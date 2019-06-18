@@ -10,19 +10,15 @@
 
 #include "bits/stdc++.h"
 
-#include "max.hpp"
+#include "MaxOverloading.hpp"
 
 int main(int /* argc */, char** /* argv */) {
-    int i = 42;
-    std::cout << "max(7, i) " << GP::max(7, i) << std::endl;
-
-    double f1 = 3.4;
-    double f2 = -6.7;
-    std::cout << "max(f1, f2): " << GP::max(f1, f2) << std::endl;
-
-    std::string s1 = "xiaohai";
-    std::string s2 = "xiaohaijin";
-    std::cout << "max(s1, s2): " << GP::max(s1, s2) << std::endl;
+    std::cout << GP::max(7, 42) << std::endl;
+    std::cout << GP::max(7.0, 42.0) << std::endl;
+    std::cout << GP::max('a', 'b') << std::endl;
+    std::cout << GP::max<>(7, 42) << std::endl;
+    std::cout << GP::max<double>(7, 42) << std::endl;
+    std::cout << GP::max('a', 42.7) << std::endl;
 
     return 0;
 }

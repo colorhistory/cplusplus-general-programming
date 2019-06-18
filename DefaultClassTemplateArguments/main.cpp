@@ -10,19 +10,18 @@
 
 #include "bits/stdc++.h"
 
-#include "max.hpp"
+#include "DefaultClassTemplateArguments.hpp"
 
 int main(int /* argc */, char** /* argv */) {
-    int i = 42;
-    std::cout << "max(7, i) " << GP::max(7, i) << std::endl;
+    GP::Stack<int> intStack;
+    intStack.push(7);
+    std::cout << intStack.top() << '\n';
+    intStack.pop();
 
-    double f1 = 3.4;
-    double f2 = -6.7;
-    std::cout << "max(f1, f2): " << GP::max(f1, f2) << std::endl;
-
-    std::string s1 = "xiaohai";
-    std::string s2 = "xiaohaijin";
-    std::cout << "max(s1, s2): " << GP::max(s1, s2) << std::endl;
+    GP::Stack<std::string, std::deque<std::string>> strStack;
+    strStack.push(std::string{"xiaohai"});
+    std::cout << strStack.top() << '\n';
+    strStack.pop();
 
     return 0;
 }

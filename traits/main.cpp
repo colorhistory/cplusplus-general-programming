@@ -13,7 +13,7 @@
 int main(int /* argc */, char** /* argv */) {
     int i = 24;
     std::add_const<int>::type c = i;
-    std::add_const_t<int> c14 = i;
+    // std::add_const_t<int> c14 = i;
     static_assert(std::is_const<decltype(c)>::value, "c should be const");
 
     std::cout << std::boolalpha;

@@ -10,7 +10,7 @@
 
 #include "bits/stdc++.h"
 
-#include "max.hpp"
+#include "DefaultTemplateArguments.hpp"
 
 int main(int /* argc */, char** /* argv */) {
     int i = 42;

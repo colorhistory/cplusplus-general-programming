@@ -10,19 +10,21 @@
 
 #include "bits/stdc++.h"
 
-#include "max.hpp"
+#include "AddValue.hpp"
 
 int main(int /* argc */, char** /* argv */) {
-    int i = 42;
-    std::cout << "max(7, i) " << GP::max(7, i) << std::endl;
+    std::vector<int> intVec;
 
-    double f1 = 3.4;
-    double f2 = -6.7;
-    std::cout << "max(f1, f2): " << GP::max(f1, f2) << std::endl;
+    std::default_random_engine engine;
+    std::uniform_int_distribution<int> distribution(0, 100);
 
-    std::string s1 = "xiaohai";
-    std::string s2 = "xiaohaijin";
-    std::cout << "max(s1, s2): " << GP::max(s1, s2) << std::endl;
+    for (std::vector<int>::size_type i = 0; i != 100; ++i) {
+        intVec.push_back(distribution(engine));
+    }
+
+    for (auto i : intVec) {
+        std::cout << i << "   " << GP::AddValue<5, int>(i) << std::endl;
+    }
 
     return 0;
 }
