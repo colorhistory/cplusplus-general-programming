@@ -39,4 +39,5 @@ SUBDIRS += \
     PrintColl \
     LessArray \
     Arrays \
-    MemberTemplates
+    MemberTemplates \
+    STL \
