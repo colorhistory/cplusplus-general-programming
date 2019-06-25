@@ -41,3 +41,12 @@ SUBDIRS += \
     Arrays \
     MemberTemplates \
     STL \
+    GeneralLambda \
+    VariableTemplate \
+    VariableTemplate2 \
+    TemplateTemplateParameters \
+    Move \
+    MoveForward \
+    SpecialMemberFunctionTemplate \
+    SpecialMemberFunctionTemplate2 \
+    enable_if
