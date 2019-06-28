@@ -51,4 +51,5 @@ SUBDIRS += \
     SpecialMemberFunctionTemplate2 \
     enable_if \
     cref \
-    Foreach
+    Foreach \
+    any_of
