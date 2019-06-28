@@ -1,25 +1,26 @@
-﻿#ifndef ANY_OF_HPP
-#define ANY_OF_HPP
+﻿#ifndef FIND_IF_NOT_HPP
+#define FIND_IF_NOT_HPP
 
 namespace GP {
 
     ////////////////////////////////////////////////////////////
-    /// \brief any_of
+    /// \brief find_if_not
     /// \param first
     /// \param last
     /// \param pred
     /// \return
     ///
     template <class InputIterator, class Predicate>
-    constexpr bool any_of(InputIterator first, InputIterator last, Predicate pred) {
+    InputIterator find_if_not(InputIterator first, InputIterator last, Predicate pred) {
         for (; first != last; ++first) {
-            if (pred(*first)) {
-                return true;
+            if (!pred(*first)) {
+                break;
             }
         }
-        return false;
+
+        return first;
     }
 
 }  // namespace GP
 
-#endif  // ANY_OF_HPP
+#endif  // FIND_IF_NOT_HPP

@@ -1,25 +1,25 @@
-﻿#ifndef ANY_OF_HPP
-#define ANY_OF_HPP
+﻿#ifndef ALL_OF_HPP
+#define ALL_OF_HPP
 
 namespace GP {
 
     ////////////////////////////////////////////////////////////
-    /// \brief any_of
+    /// \brief all_of
     /// \param first
     /// \param last
     /// \param pred
     /// \return
     ///
     template <class InputIterator, class Predicate>
-    constexpr bool any_of(InputIterator first, InputIterator last, Predicate pred) {
+    constexpr bool all_of(InputIterator first, InputIterator last, Predicate pred) {
         for (; first != last; ++first) {
-            if (pred(*first)) {
-                return true;
+            if (!pred(*first)) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 }  // namespace GP
 
-#endif  // ANY_OF_HPP
+#endif  // ALL_OF_HPP

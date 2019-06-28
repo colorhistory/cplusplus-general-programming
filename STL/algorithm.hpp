@@ -13,7 +13,7 @@ namespace GP {
     constexpr bool all_of(InputIterator first, InputIterator last, Predicate pred);
 
     ////////////////////////////////////////////////////////////
-    /// \brief any_of
+    /// \brief any_of  任何一个元素为真时则为真
     /// \param first
     /// \param last
     /// \param pred
@@ -23,7 +23,7 @@ namespace GP {
     constexpr bool any_of(InputIterator first, InputIterator last, Predicate pred);
 
     ////////////////////////////////////////////////////////////
-    /// \brief none_of
+    /// \brief none_of  所有元素的判定结果都为假
     /// \param first
     /// \param last
     /// \param pred
@@ -33,7 +33,7 @@ namespace GP {
     constexpr bool none_of(InputIterator first, InputIterator last, Predicate pred);
 
     ////////////////////////////////////////////////////////////
-    /// \brief for_each
+    /// \brief for_each  对每一个元素进行处理
     /// \param first
     /// \param last
     /// \param f
@@ -43,7 +43,7 @@ namespace GP {
     constexpr Function for_each(InputIterator first, InputIterator last, Function f);
 
     ////////////////////////////////////////////////////////////
-    /// \brief for_each_n
+    /// \brief for_each_n 对从first开头的前n个元素进行处理
     /// \param first
     /// \param n
     /// \param f
@@ -53,7 +53,7 @@ namespace GP {
     constexpr InputIterator for_each_n(InputIterator first, Size n, Function f);
 
     ////////////////////////////////////////////////////////////
-    /// \brief find
+    /// \brief find  进行值查找
     /// \param first
     /// \param last
     /// \param value
@@ -63,7 +63,7 @@ namespace GP {
     constexpr InputIterator find(InputIterator first, InputIterator last, const T& value);
 
     ////////////////////////////////////////////////////////////
-    /// \brief find_if
+    /// \brief find_if  对元素进行条件查找
     /// \param first
     /// \param last
     /// \param pred
@@ -73,7 +73,7 @@ namespace GP {
     constexpr InputIterator find_if(InputIterator first, InputIterator last, Predicate pred);
 
     ////////////////////////////////////////////////////////////
-    /// \brief find_if_not
+    /// \brief find_if_not  对元素进行条件查找的否定
     /// \param first
     /// \param last
     /// \param pred
@@ -83,7 +83,8 @@ namespace GP {
     InputIterator find_if_not(InputIterator first, InputIterator last, Predicate pred);
 
     ////////////////////////////////////////////////////////////
-    /// \brief find_end
+    /// \brief find_end 会在一个序列中查找最后一个和另一个元素段匹配的匹配项，
+    ///                 也可以看作在一个元素序列中查找子序列的最后一个匹配项。
     /// \param first1
     /// \param last1
     /// \param first2
@@ -91,11 +92,11 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2>
-    ForwardIterator1 find_end(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2,
-                              ForwardIterator2 last2);
+    ForwardIterator1 find_end(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2);
 
     ////////////////////////////////////////////////////////////
-    /// \brief find_end
+    /// \brief find_end 会在一个序列中查找最后一个和另一个元素段匹配的匹配项，
+    ///                 也可以看作在一个元素序列中查找子序列的最后一个匹配项。
     /// \param first1
     /// \param last1
     /// \param first2
@@ -104,11 +105,11 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2, class BinaryPredicate>
-    ForwardIterator1 find_end(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2,
-                              ForwardIterator2 last2, BinaryPredicate pred);
+    ForwardIterator1 find_end(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
-    /// \brief find_first_of
+    /// \brief find_first_of  可以在第一个序列中搜索第二个序列在
+    ///                       第一个序列中第一次出现的任何元序列
     /// \param first1
     /// \param last1
     /// \param first2
@@ -116,11 +117,11 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2>
-    constexpr ForwardIterator1 find_first_of(ForwardIterator1 first1, ForwardIterator1 last1,
-                                             ForwardIterator2 first2, ForwardIterator2 last2);
+    constexpr ForwardIterator1 find_first_of(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2);
 
     ////////////////////////////////////////////////////////////
-    /// \brief find_first_of
+    /// \brief find_first_of  可以在第一个序列中搜索第二个序列在
+    ///                       第一个序列中第一次出现的任何元序列
     /// \param first1
     /// \param last1
     /// \param first2
@@ -129,9 +130,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2, class BinaryPredicate>
-    constexpr ForwardIterator1 find_first_of(ForwardIterator1 first1, ForwardIterator1 last1,
-                                             ForwardIterator2 first2, ForwardIterator2 last2,
-                                             BinaryPredicate pred);
+    constexpr ForwardIterator1 find_first_of(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief adjacent_find
@@ -160,9 +159,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class T>
-    constexpr typename std::iterator_traits<InputIterator>::difference_type count(InputIterator first,
-                                                                                  InputIterator last,
-                                                                                  const T& value);
+    constexpr typename std::iterator_traits<InputIterator>::difference_type count(InputIterator first, InputIterator last, const T& value);
 
     ////////////////////////////////////////////////////////////
     /// \brief count_if
@@ -172,9 +169,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class Predicate>
-    constexpr typename std::iterator_traits<InputIterator>::difference_type count_if(InputIterator first,
-                                                                                     InputIterator last,
-                                                                                     Predicate pred);
+    constexpr typename std::iterator_traits<InputIterator>::difference_type count_if(InputIterator first, InputIterator last, Predicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief mismatch
@@ -184,8 +179,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2>
-    constexpr std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1,
-                                                                 InputIterator2 first2);
+    constexpr std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2);
 
     ////////////////////////////////////////////////////////////
     /// \brief mismatch
@@ -196,8 +190,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2>
-    constexpr std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1,
-                                                                 InputIterator2 first2, InputIterator2 last2);
+    constexpr std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2);
 
     ////////////////////////////////////////////////////////////
     /// \brief mismatch
@@ -208,8 +201,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class BinaryPredicate>
-    constexpr std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1,
-                                                                 InputIterator2 first2, BinaryPredicate pred);
+    constexpr std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief mismatch
@@ -221,9 +213,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class BinaryPredicate>
-    constexpr std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1,
-                                                                 InputIterator2 first2, InputIterator2 last2,
-                                                                 BinaryPredicate pred);
+    constexpr std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief equal
@@ -267,8 +257,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class BinaryPredicate>
-    constexpr bool equal(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2,
-                         BinaryPredicate pred);
+    constexpr bool equal(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief is_permutation
@@ -289,8 +278,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2>
-    constexpr bool is_permutation(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2,
-                                  ForwardIterator2 last2);
+    constexpr bool is_permutation(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2);
 
     ////////////////////////////////////////////////////////////
     /// \brief is_permutation
@@ -301,8 +289,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2, class BinaryPredicate>
-    constexpr bool is_permutation(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2,
-                                  BinaryPredicate pred);
+    constexpr bool is_permutation(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief is_permutation
@@ -314,8 +301,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2, class BinaryPredicate>
-    constexpr bool is_permutation(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2,
-                                  ForwardIterator2 last2, BinaryPredicate pred);
+    constexpr bool is_permutation(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief search
@@ -326,8 +312,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2>
-    constexpr ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2,
-                                      ForwardIterator2 last2);
+    constexpr ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2);
 
     ////////////////////////////////////////////////////////////
     /// \brief search
@@ -339,8 +324,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator1, class ForwardIterator2, class BinaryPredicate>
-    constexpr ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2,
-                                      ForwardIterator2 last2, BinaryPredicate pred);
+    constexpr ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief search_n
@@ -363,8 +347,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator, class Size, class T, class BinaryPredicate>
-    constexpr ForwardIterator search_n(ForwardIterator first, ForwardIterator last, Size count, const T& value,
-                                       BinaryPredicate pred);
+    constexpr ForwardIterator search_n(ForwardIterator first, ForwardIterator last, Size count, const T& value, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief copy
@@ -405,8 +388,7 @@ namespace GP {
     /// \return
     ///
     template <class BidirectionalIterator1, class BidirectionalIterator2>
-    BidirectionalIterator2 copy_backward(BidirectionalIterator1 first, BidirectionalIterator1 last,
-                                         BidirectionalIterator2 result);
+    BidirectionalIterator2 copy_backward(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 result);
 
     ////////////////////////////////////////////////////////////
     /// \brief swap_ranges
@@ -435,8 +417,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class OutputIterator, class UnaryOperation>
-    constexpr OutputIterator transform(InputIterator first, InputIterator last, OutputIterator result,
-                                       UnaryOperation op);
+    constexpr OutputIterator transform(InputIterator first, InputIterator last, OutputIterator result, UnaryOperation op);
 
     ////////////////////////////////////////////////////////////
     /// \brief transform
@@ -448,8 +429,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator, class BinaryOperation>
-    constexpr OutputIterator transform(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                       OutputIterator result, BinaryOperation binary_op);
+    constexpr OutputIterator transform(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, OutputIterator result, BinaryOperation binary_op);
 
     ////////////////////////////////////////////////////////////
     /// \brief replace
@@ -481,8 +461,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class OutputIterator, class T>
-    constexpr OutputIterator replace_copy(InputIterator first, InputIterator last, OutputIterator result,
-                                          const T& old_value, const T& new_value);
+    constexpr OutputIterator replace_copy(InputIterator first, InputIterator last, OutputIterator result, const T& old_value, const T& new_value);
 
     ////////////////////////////////////////////////////////////
     /// \brief replace_copy_if
@@ -494,8 +473,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class OutputIterator, class Predicate, class T>
-    constexpr OutputIterator replace_copy_if(InputIterator first, InputIterator last, OutputIterator result,
-                                             Predicate pred, const T& new_value);
+    constexpr OutputIterator replace_copy_if(InputIterator first, InputIterator last, OutputIterator result, Predicate pred, const T& new_value);
 
     ////////////////////////////////////////////////////////////
     /// \brief fill
@@ -564,8 +542,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class OutputIterator, class T>
-    constexpr OutputIterator remove_copy(InputIterator first, InputIterator last, OutputIterator result,
-                                         const T& value);
+    constexpr OutputIterator remove_copy(InputIterator first, InputIterator last, OutputIterator result, const T& value);
 
     ////////////////////////////////////////////////////////////
     /// \brief remove_copy_if
@@ -576,8 +553,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class OutputIterator, class Predicate>
-    constexpr OutputIterator remove_copy_if(InputIterator first, InputIterator last, OutputIterator result,
-                                            Predicate pred);
+    constexpr OutputIterator remove_copy_if(InputIterator first, InputIterator last, OutputIterator result, Predicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief unique
@@ -617,8 +593,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class OutputIterator, class BinaryPredicate>
-    OutputIterator unique_copy(InputIterator first, InputIterator last, OutputIterator result,
-                               BinaryPredicate pred);
+    OutputIterator unique_copy(InputIterator first, InputIterator last, OutputIterator result, BinaryPredicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief reverse
@@ -636,8 +611,7 @@ namespace GP {
     /// \return
     ///
     template <class BidirectionalIterator, class OutputIterator>
-    constexpr OutputIterator reverse_copy(BidirectionalIterator first, BidirectionalIterator last,
-                                          OutputIterator result);
+    constexpr OutputIterator reverse_copy(BidirectionalIterator first, BidirectionalIterator last, OutputIterator result);
 
     ////////////////////////////////////////////////////////////
     /// \brief rotate
@@ -658,8 +632,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator, class OutputIterator>
-    OutputIterator rotate_copy(ForwardIterator first, ForwardIterator middle, ForwardIterator last,
-                               OutputIterator result);
+    OutputIterator rotate_copy(ForwardIterator first, ForwardIterator middle, ForwardIterator last, OutputIterator result);
 
     ////////////////////////////////////////////////////////////
     /// \brief random_shuffle
@@ -690,8 +663,7 @@ namespace GP {
     /// \return
     ///
     template <class PopulationIterator, class SampleIterator, class Distance, class UniformRandomBitGenerator>
-    SampleIterator sample(PopulationIterator first, PopulationIterator last, SampleIterator out, Distance n,
-                          UniformRandomBitGenerator&& g);
+    SampleIterator sample(PopulationIterator first, PopulationIterator last, SampleIterator out, Distance n, UniformRandomBitGenerator&& g);
 
     ////////////////////////////////////////////////////////////
     /// \brief shuffle
@@ -732,10 +704,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class OutputIterator1, class OutputIterator2, class Predicate>
-    constexpr std::pair<OutputIterator1, OutputIterator2> partition_copy(InputIterator first, InputIterator last,
-                                                                         OutputIterator1 out_true,
-                                                                         OutputIterator2 out_false,
-                                                                         Predicate pred);
+    constexpr std::pair<OutputIterator1, OutputIterator2> partition_copy(InputIterator first, InputIterator last, OutputIterator1 out_true, OutputIterator2 out_false, Predicate pred);
 
     ////////////////////////////////////////////////////////////
     /// \brief stable_partition
@@ -846,8 +815,7 @@ namespace GP {
     /// \param comp
     ///
     template <class RandomAccessIterator, class Compare>
-    void partial_sort(RandomAccessIterator first, RandomAccessIterator middle, RandomAccessIterator last,
-                      Compare comp);
+    void partial_sort(RandomAccessIterator first, RandomAccessIterator middle, RandomAccessIterator last, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief partial_sort_copy
@@ -858,8 +826,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class RandomAccessIterator>
-    RandomAccessIterator partial_sort_copy(InputIterator first, InputIterator last,
-                                           RandomAccessIterator result_first, RandomAccessIterator result_last);
+    RandomAccessIterator partial_sort_copy(InputIterator first, InputIterator last, RandomAccessIterator result_first, RandomAccessIterator result_last);
 
     ////////////////////////////////////////////////////////////
     /// \brief partial_sort_copy
@@ -871,9 +838,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator, class RandomAccessIterator, class Compare>
-    RandomAccessIterator partial_sort_copy(InputIterator first, InputIterator last,
-                                           RandomAccessIterator result_first, RandomAccessIterator result_last,
-                                           Compare comp);
+    RandomAccessIterator partial_sort_copy(InputIterator first, InputIterator last, RandomAccessIterator result_first, RandomAccessIterator result_last, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief nth_element
@@ -892,8 +857,7 @@ namespace GP {
     /// \param comp
     ///
     template <class RandomAccessIterator, class Compare>
-    void nth_element(RandomAccessIterator first, RandomAccessIterator nth, RandomAccessIterator last,
-                     Compare comp);
+    void nth_element(RandomAccessIterator first, RandomAccessIterator nth, RandomAccessIterator last, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief lower_bound
@@ -914,8 +878,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator, class T, class Compare>
-    constexpr ForwardIterator lower_bound(ForwardIterator first, ForwardIterator last, const T& value,
-                                          Compare comp);
+    constexpr ForwardIterator lower_bound(ForwardIterator first, ForwardIterator last, const T& value, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief upper_bound
@@ -936,8 +899,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator, class T, class Compare>
-    constexpr ForwardIterator upper_bound(ForwardIterator first, ForwardIterator last, const T& value,
-                                          Compare comp);
+    constexpr ForwardIterator upper_bound(ForwardIterator first, ForwardIterator last, const T& value, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief equal_range
@@ -947,8 +909,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator, class T>
-    constexpr std::pair<ForwardIterator, ForwardIterator> equal_range(ForwardIterator first, ForwardIterator last,
-                                                                      const T& value);
+    constexpr std::pair<ForwardIterator, ForwardIterator> equal_range(ForwardIterator first, ForwardIterator last, const T& value);
 
     ////////////////////////////////////////////////////////////
     /// \brief equal_range
@@ -959,8 +920,7 @@ namespace GP {
     /// \return
     ///
     template <class ForwardIterator, class T, class Compare>
-    constexpr std::pair<ForwardIterator, ForwardIterator> equal_range(ForwardIterator first, ForwardIterator last,
-                                                                      const T& value, Compare comp);
+    constexpr std::pair<ForwardIterator, ForwardIterator> equal_range(ForwardIterator first, ForwardIterator last, const T& value, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief binary_search
@@ -993,8 +953,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator>
-    OutputIterator merge(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2,
-                         OutputIterator result);
+    OutputIterator merge(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result);
 
     ////////////////////////////////////////////////////////////
     /// \brief merge
@@ -1007,8 +966,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator, class Compare>
-    OutputIterator merge(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2,
-                         OutputIterator result, Compare comp);
+    OutputIterator merge(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief inplace_merge
@@ -1027,8 +985,7 @@ namespace GP {
     /// \param comp
     ///
     template <class BidirectionalIterator, class Compare>
-    void inplace_merge(BidirectionalIterator first, BidirectionalIterator middle, BidirectionalIterator last,
-                       Compare comp);
+    void inplace_merge(BidirectionalIterator first, BidirectionalIterator middle, BidirectionalIterator last, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief includes
@@ -1039,8 +996,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2>
-    constexpr bool includes(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                            InputIterator2 last2);
+    constexpr bool includes(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2);
 
     ////////////////////////////////////////////////////////////
     /// \brief includes
@@ -1052,8 +1008,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class Compare>
-    constexpr bool includes(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                            InputIterator2 last2, Compare comp);
+    constexpr bool includes(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief set_union
@@ -1065,8 +1020,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator>
-    OutputIterator set_union(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                             InputIterator2 last2, OutputIterator result);
+    OutputIterator set_union(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result);
 
     ////////////////////////////////////////////////////////////
     /// \brief set_union
@@ -1079,8 +1033,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator, class Compare>
-    OutputIterator set_union(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                             InputIterator2 last2, OutputIterator result, Compare comp);
+    OutputIterator set_union(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief set_intersection
@@ -1092,8 +1045,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator>
-    constexpr OutputIterator set_intersection(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                              InputIterator2 last2, OutputIterator result);
+    constexpr OutputIterator set_intersection(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result);
 
     ////////////////////////////////////////////////////////////
     /// \brief set_intersection
@@ -1106,8 +1058,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator, class Compare>
-    constexpr OutputIterator set_intersection(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                              InputIterator2 last2, OutputIterator result, Compare comp);
+    constexpr OutputIterator set_intersection(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief set_difference
@@ -1119,8 +1070,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator>
-    OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                  InputIterator2 last2, OutputIterator result);
+    OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result);
 
     ////////////////////////////////////////////////////////////
     /// \brief set_difference
@@ -1133,8 +1083,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator, class Compare>
-    OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                  InputIterator2 last2, OutputIterator result, Compare comp);
+    OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief set_symmetric_difference
@@ -1146,8 +1095,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator>
-    OutputIterator set_symmetric_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                            InputIterator2 last2, OutputIterator result);
+    OutputIterator set_symmetric_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result);
 
     ////////////////////////////////////////////////////////////
     /// \brief set_symmetric_difference
@@ -1160,8 +1108,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class OutputIterator, class Compare>
-    OutputIterator set_symmetric_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                            InputIterator2 last2, OutputIterator result, Compare comp);
+    OutputIterator set_symmetric_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief push_heap
@@ -1267,8 +1214,7 @@ namespace GP {
     /// \return
     ///
     template <class RandomAccessIterator, class Compare>
-    constexpr RandomAccessIterator is_heap_until(RandomAccessIterator first, RandomAccessIterator last,
-                                                 Compare comp);
+    constexpr RandomAccessIterator is_heap_until(RandomAccessIterator first, RandomAccessIterator last, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief min_element
@@ -1467,8 +1413,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2>
-    constexpr bool lexicographical_compare(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                           InputIterator2 last2);
+    constexpr bool lexicographical_compare(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2);
 
     ////////////////////////////////////////////////////////////
     /// \brief lexicographical_compare
@@ -1480,8 +1425,7 @@ namespace GP {
     /// \return
     ///
     template <class InputIterator1, class InputIterator2, class Compare>
-    constexpr bool lexicographical_compare(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                                           InputIterator2 last2, Compare comp);
+    constexpr bool lexicographical_compare(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, Compare comp);
 
     ////////////////////////////////////////////////////////////
     /// \brief next_permutation

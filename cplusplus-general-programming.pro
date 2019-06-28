@@ -52,4 +52,23 @@ SUBDIRS += \
     enable_if \
     cref \
     Foreach \
-    any_of
+    all_of \
+    any_of \
+    none_of \
+    for_each \
+    for_each_n \
+    find \
+    find_if \
+    find_if_not \
+    find_end \
+    find_end_with_pred \
+    find_first_of \
+    find_first_of_with_pred \
+    adjacent_find \
+    adjacent_find_with_pred \
+    count \
+    count_if \
+    mismatch \
+    mismatch_with_pred \
+    mismatch2 \
+    mismatch_with_pred2
