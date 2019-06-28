@@ -49,4 +49,6 @@ SUBDIRS += \
     MoveForward \
     SpecialMemberFunctionTemplate \
     SpecialMemberFunctionTemplate2 \
-    enable_if
+    enable_if \
+    cref \
+    Foreach
