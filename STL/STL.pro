@@ -34,4 +34,5 @@ HEADERS += \
     hashtable.hpp \
     forward_list.hpp \
     numeric.hpp \
-    functional.hpp
+    functional.hpp \
+    map.hpp

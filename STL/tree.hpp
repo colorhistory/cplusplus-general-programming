@@ -10,15 +10,19 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 template <class _Tp, class _Compare, class _Allocator>
 class __tree;
+
 template <class _Tp, class _NodePtr, class _DiffType>
 class __tree_iterator;
+
 template <class _Tp, class _ConstNodePtr, class _DiffType>
 class __tree_const_iterator;
 
 template <class _Pointer>
 class __tree_end_node;
+
 template <class _VoidPtr>
 class __tree_node_base;
+
 template <class _Tp, class _VoidPtr>
 class __tree_node;
 
@@ -27,8 +31,10 @@ struct __value_type;
 
 template <class _Allocator>
 class __map_node_destructor;
+
 template <class _TreeIterator>
 class __map_iterator;
+
 template <class _TreeIterator>
 class __map_const_iterator;
 
